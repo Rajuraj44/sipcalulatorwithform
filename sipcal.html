@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIP Calculator</title>
+	<link rel="icon" type="image" href="small_logo.jpg">
+	<link rel="stylesheet" href="sipcal.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+	                                          <!-- ///////navbar/////-->
+	  	<nav class="navbar navbar-expand-md navigation navbar-light fixed-top pt-lg-4 pb-lg-4">
+	  		<div class="container">
+	  			<a href="index.html" class="navbar-brand"><img src="small_logo.jpg" class="img-fluid"><span>Fintra</span></a>
+	  			<button class="navbar-toggler" data-target="#mynav" data-toggle="collapse">
+	  				<span class="navbar-toggler-icon"></span>
+	  			</button>
+	  			<div class="collapse navbar-collapse" id="mynav">
+	  				<ul class="navbar-nav ml-auto">
+	  					<li class="nav-item"><a href="index.html" class="nav-link ">HOME</a></li>
+	  					<li class="nav-item"><a href="#" class="nav-link">MUTUAL FUNDS</a></li>
+	  					<li class="nav-item active "><a href="#" class="nav-link home">CALCULATORS</a></li>
+	  					<li class="nav-item"><a href="blog.html" class="nav-link ">BLOG</a></li>
+	  					<li class="nav-item"><a href="#" class="nav-link">TOPICS</a></li>
+	  					<li class="nav-item"><a href="#" class="nav-link">NIFTY 50</a></li>
+	  					<li class="nav-item "><a href="#" class="nav-link">NIFTY 500</a></li>
+	  					<li class="nav-item"><a href="#" class="nav-link">NSE</a></li>
+	  					<li class="nav-item"><a href="#" class="nav-link">CREDIT CARDS</a></li>
+	  					<li class="dropdown">
+	  					 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Language</a>
+                             <ul class="dropdown-menu">
+                               <li class="nav-item"><a href="#" class="nav-link"><img src="english.png" class="img-fluid"> ENGLISH</a></li>
+                               <li class="nav-item"><a href="#" class="nav-link"><img src="hindi.png" class="img-fluid"> HINDI</a></li>
+                             </ul>
+                          </li>
+	  				</ul>
+	  			</div>
+	  		</div>
+	  	</nav> <br>  
+      <br> 
+      <br> <br>
+
+
+	  	                               <!-- ////banner///// -->
+
+
+	  <div class="container-fluid page-name">
+	  	<div class="container">
+	  		<ul>
+	  			<li><a href="index.html">HOME <span>/</span></a></li>
+	  			<li><a href="index.html">CALCULATOR <span>/</span></a></li>
+	  			<li><a href="#" style="color:white;">SIP Calculator</a></li>
+	  		</ul>
+	  	</div>
+	  </div>
+
+	                                       <!-- ////calculatorcontent//// -->    
+	   <div class="container calculatorcontent">
+	   	<h3>SIP Calculator</h3>
+	   	<div class="row border-0">
+	   		<div class="col-lg-6 col-md-6 col-sm-11 col-12 d-block m-auto">
+	   			<div class="card border" style="background-color: #F6F8F9; margin-bottom: 30px; box-shadow:1px 1px 5px 0 rgb(0,0,0,.4);">
+	   				<div class="card-body">
+                     <form >
+                      <div class="form-group">
+                       <label>Monthly Investment Amount</label>
+                       <div class="input-group-prepend ">
+                       <div class="input-group-text font-weight-bold" style="border-radius:1px;width:60px;">&#8377</div>
+                       <input type="number" class="form-control" id="amount" style="border-radius:1px;"
+                      ><i class="fa fa-exclamation-circle" id="first" aria-hidden="true"></i>
+                    </div>
+                       <span id="month_error" style="color:red;" class="formerror"></span>
+                     </div>
+
+                     <div class="form-group">
+                     <label>Time Period (In Year)</label>
+                     <div class="input-group-prepend ">
+                       <div class="input-group-text font-weight-bold" style="border-radius:1px;">Year</div>
+                     <input type="number" class="form-control" id="timeperiod" style="border-radius:1px;"><i class="fa fa-exclamation-circle" id="second" aria-hidden="true"></i>
+                 </div>
+                 <span id="year_error" class="formerror"  style="color:red;"></span>
+                    </div>
+
+                    <div class="form-group">
+                     <label>Expected Return Rate (%)</label>
+                     <div class="input-group-prepend ">
+                       <div class="input-group-text font-weight-bold" style="border-radius:1px; width:60px;"> %</div>
+                     <input type="number" class="form-control" id="rate" style="border-radius:1px;"><i class="fa fa-exclamation-circle" id="third" aria-hidden="true"></i>
+                 </div>
+                 <span id="rate_error" class="formerror"  style="color:red;"></span>
+                    </div>
+
+                     <div class="form-group">
+                    <!-- <label for="result">Total Value:</label> -->
+                    <div class="input-group-prepend ">
+                       
+                    <input type="hidden" class="form-control" id="result" readonly style="border-radius:1px;" >
+                </div>
+                   </div>
+                    <button type="button" onclick="SIP()" class="btn btn-block">Calculate Now</button>
+                    </form>
+	   				</div>
+	   			</div>
+	   		</div>
+	   		<div class="col-lg-6 col-md-6 col-sm-11 col-12 d-block m-auto">
+	   			<table class="table table-striped">
+                 <thead>
+                   <tr>
+                     <th>Summary</th>
+                     <th></th>
+                     <th></th>
+                   </tr>
+                 </thead>
+
+                 <tbody>
+                 	<tr>
+                     <th>Expected amount</th>
+                     <td></td>
+                     <td style="font-size:17px"><strong>&#8377</strong> <span><span id="EA"></span></td>
+                   </tr>
+                   <tr>
+                     <th>Amount Invested</th>
+                     <td></td>
+                     <td style="font-size:17px"><strong>&#8377</strong> <span id="AM"></span></td>
+                   </tr>
+                   <tr>
+                     <th>Wealth Gain</th>
+                     <td></td>
+                     <td style="font-size:17px;"><strong>&#8377</strong> <span id="GA" style="color: #00cd00;"></span></td>
+                   </tr>
+                 </tbody>
+                </table>
+	   			<!-- <img src="sipcal.png" class="img-fluid" height="400" width="710"> -->
+	   		</div>
+	   	</div>
+	   </div> 
+   
+
+        <div class="container form2">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-11 col-12 d-block m-auto">
+              <div class="card" style="background-color: #F6F8F9; margin-bottom: 30px; box-shadow:1px 1px 5px 0 rgb(0,0,0,.4);">
+                <div class="card-body">
+                  <form>
+                     <div class="form-group">
+                      <label>Your Name</label>
+                      <div class="input-group-prepend ">
+                      <div class="input-group-text font-weight-bold" style="border-radius:1px;width:60px;">@</div>
+                      <input type="text" class="form-control" id="name" autocomplete="off"   style="border-radius:1px;"
+                      >
+                      <i class="fa fa-exclamation-circle" id="nameicon" id="num1" aria-hidden="true"></i>
+                     </div>
+                       <span id="name_error" style="color:red;" class="formerror"></span>
+                     </div>
+
+                      <div class="form-group">
+                      <label>Your Age</label>
+                      <div class="input-group-prepend ">
+                       <div class="input-group-text font-weight-bold" style="border-radius:1px;">Year</div>
+                       <input type="number" class="form-control" id="number" style="border-radius:1px;">
+                       <i class="fa fa-exclamation-circle" id="numbericon" id="num2" aria-hidden="true"></i>
+                     </div>
+                      <span id="number_error" class="formerror"  style="color:red;"></span>
+                     </div>
+
+                     <div class="form-group">
+                      <label>Select Any One</label>
+                      <select class="form-control" id="selectchoose">
+                      <option class="disabled">Choose One</option>
+                      <option>SIP</option>
+                      <option>RD</option>
+                      <option>FD</option>
+                      </select>
+                      <i class="fa fa-exclamation-circle" id="selecticon" id="num3" aria-hidden="true" style="margin-top:-36px!important; margin-right:5px"></i>
+                      <span id="select_error" style="color:red;" class="formerror"></span>
+                      </div>
+                       
+                      <div class="form-group">
+                      <label>Feedback</label>
+                      <textarea class="form-control"  rows="3" id="feedback"></textarea>
+                      <i class="fa fa-exclamation-circle" id="feedbackicon" id="num4" aria-hidden="true" style="margin-top:-70px!important;"></i>
+                      <span id="feedback_error" style="color:red;" class="formerror"></span>
+                      </div>
+                         
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="radio">
+                        <label>Term & Condition</label>
+                        <span id="radio_error" style="color:red;" class="formerror"></span>
+                        </div> 
+                        <span id="success" style="color:green;" class="text-success"></span><br><br>
+
+                        <button type="button" onclick="return subm()" class="btn btn-block">Submit</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+             <div class="col-lg-6 col-md-6 col-sm-11 col-12 d-block m-auto"></div>
+          </div>
+        </div>
+
+
+                                               <!-- /////aboutSIP//// -->
+	   <div class="container aboutSIP">
+        <h2>What is a SIP?</h2><hr class="line">
+        <p>SIP or Systematic Investment Plan, by definition, is a mode of investment offered by mutual funds, wherein you can invest a fixed amount of money at regular intervals - this could be monthly or quarterly. Some investment experts draw a parallel between SIPs and Recurring Deposit - the only difference is that, in the latter the money is invested in a mutual fund scheme.</p>
+
+        <p>With its structured approach, SIP brings balance and discipline to the investment, and is a great tool for wealth creation. Since the investor invests in a time-bound manner, he/she does not have to worry about the market dynamics. It is the best way to achieve long-term goals including retirement planning, buying a house or children's higher education. SIPs have an added advantage of the power of compounding investments. The longer you stay invested, the more you gain.</p>
+
+	   	<h2>What is a SIP Calculator?</h2><hr class="line">
+	   	
+	   	<p>A SIP calculator is a simple tool that allows individuals to get an idea of the returns on their mutual fund investments made through SIP. SIP investments in mutual funds have become one of the most popular investment options for millennials lately.</p>
+	   	<p>These mutual fund sip calculators are designed to give potential investors an estimate on their mutual fund investments. However, the actual returns offered by a mutual fund scheme varies depending on various factors. The SIP calculator does not provide clarification for the exit load and expense ratio (if any).</p>
+	   	<p>This calculator will calculate the wealth gain and expected returns for your monthly SIP investment. Indeed, you get a rough estimate on the maturity amount for any of your monthly SIP, based on a projected annual return rate.</p>
+        <br>
+
+	   	<h2>Advantages of SIP</h2><hr class="line">
+	   	
+	   	<P><i class="fa fa-square" aria-hidden="true"></i> The best part of SIPs is that you can invest small amounts of money, even if it's only ₹500.</P>
+
+	   	<P> <i class="fa fa-square" aria-hidden="true"></i> You don't need to speculate or focus on timing the market (which isn't the right way for generating returns over long term).</P>
+
+	   	<P><i class="fa fa-square" aria-hidden="true"></i> Shows accurate results and helps you save time required during a manual calculation.</P>
+
+         <p><i class="fa fa-square" aria-hidden="true"></i> SIP is modeled in such a way that it encourages discipline and regularity in investments.</P>
+
+	   </div>   
+
+
+      
+	                                       
+                                            <!-- /////aboutus/////-->
+      <div class="container-fluid aboutus">
+      	<div class="row">
+      		<div class="col-lg-1 col-md-1 col-sm-0 col-11 d-block m-auto"></div>
+      		<div class="col-lg-3 col-md-5 col-sm-10 col-11 d-block m-auto">
+      			<h5>Calculators</h5>
+      			<ul>
+			        <li><a href="/english/tools/mutual-fund-calculator"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Mutual Fund Calculator</a></li>
+			        <li><a href="/english/tools/sip-calculator"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> SIP Calculator</a></li>
+			        <li><a href="/english/tools/elss-calculator"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> ELSS Calculator</a></li>
+			        <li><a href="/english/tools/risk-calculator"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Mutual Fund Risk</li>
+			        <li><a href="/english/tools/retirement-calculator"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Mutual Fund Retirement Planning Calculator</a></li>
+			        <li class="callast"><a href="/english/tools/emi-calculator"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> EMI Calculator</a></li>
+			    </ul>
+      		</div>
+      		<div class="col-lg-4 col-md-6 col-sm-10 col-11 d-block m-auto">
+      			<h5>Blogs</h5>
+      			<ul>
+			        <li> <a href="/blog/credit-card-rent-payment-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> क्रेडिट कार्ड से रेंट देने के आसान तरीके&nbsp; (ऑनलाइन रेंट पेमेंट क्रेडिट कार्ड)</a></li>
+			        <li><a href="/blog/ultimate-guide-to-best-shopping-credit-cards"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Ultimate guide to best Shopping Credit Cards 2020</a></li>
+			        <li><a href="/blog/pradhan-mantri-mudra-yojana-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> प्रधान मंत्री मुद्रा योजना</a></li>
+			        <li><a href="/blog/Public-provident-fund-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> पब्लिक प्रोविडेंट फण्ड</a></li>
+			        <li><a href="/blog/fixed-deposit-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> फिक्स्ड डिपाजिट</a></li>
+			        <li><a href="/blog/how-to-start-sip-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> एसआईपी कैसे शुरू करें?</a></li>
+			        <li><a href="/blog/senior-citizen-savings-scheme-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> सीनियर सिटीज</a></li>
+			        <li> <a href="/blog/tax-savings-80C-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> दो मिनट में टैक्स बचाए  (सेक्शन 80 सी के तहत)</a></li>
+			        <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> <a href="/blog/sukanya-samridhi-yojana-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> सुकन्या समृद्धि योजना (एसएसवाई) - बेटी बचाओ बेटी पढाओ</a></li>
+			        <li><a href="/blog/standup-india-loan-scheme-hi"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> स्टैंडअप इंडिया लोन स्कीम</a></li>
+			   </ul>
+      		</div>
+      		<div class="col-lg-2 col-md-4 col-sm-10 col-11 d-block m-auto">
+      			<h5>About Us</h5>
+      			<ul>
+                   <li><a href="/privacy_policy.html">Company Policy</a></li>
+                   <li><a href="https://www.facebook.com/Fintra-714955548629332" target="_blank">Facebook</a></li>
+                   <li><a href="https://www.linkedin.com/company/13457034" target="_blank">Linkedin</a></li>
+                   <li><a href="https://twitter.com/FintraSupport" target="_blank">Twitter</a></li>
+                   <li class="aboutlast"><a href="https://www.youtube.com/channel/UC13B009CymX4ClgOgXPuiYw" target="_blank">Youtube</a></li>
+                </ul>
+      		</div>
+      		<div class="col-lg-1 col-md-5 col-sm-10 col-11 d-block m-auto">
+      			<h5>Downloads</h5>
+      			<ul>
+                   <li class="downlast"><a href="https://play.google.com/store/apps/details?id=com.fintra.app&amp;referrer=utm_source%3Dsite%26utm_medium%3Dapplink" target="_blank">Fintra Android App<br><img alt="Fintra Android App" src="https://images.fintra.co.in/cms/googleplay-download-1.jpg" class="img-fluid"></a></li>
+                  </ul>
+                  <span><i class="fa fa-2x fa-long-arrow-up" onclick="topFunction()" id="myBtn" aria-hidden="true"></i></span>
+      		</div>
+      		<div class="col-lg-1 col-md-0 col-sm-0 col-11 d-block m-auto"></div>
+      	</div>
+      </div>
+
+	   <footer>
+	   	<p>© 2020 Fintra</p>
+	   </footer> 
+
+
+
+<script type="text/javascript">
+  function subm(){
+      name=document.getElementById("name").value;
+      number=document.getElementById("number").value;
+      feedback=document.getElementById("feedback").value;
+      select=document.getElementById("selectchoose").selectedIndex;
+      radio=document.getElementById("radio").checked;
+
+    if (name=="" && number=="" && feedback=="" && select=="" ) {
+        document.getElementById("name_error").innerHTML="**field is required";
+        document.getElementById("number_error").innerHTML="**field is required";
+        document.getElementById("feedback_error").innerHTML="**field is required";
+        document.getElementById("select_error").innerHTML="**field is required";
+        document.getElementById("radio_error").innerHTML="**field is required";
+        document.getElementById("nameicon").style.display = "block";
+        document.getElementById("numbericon").style.display = "block";
+        document.getElementById("selecticon").style.display = "block";
+        document.getElementById("feedbackicon").style.display = "block";             
+       
+    }else if (name=="") {
+      document.getElementById("name_error").innerHTML="Name Cannot Be Empty";
+      document.getElementById("nameicon").style.display = "block";
+    }else if (number=="") {
+      document.getElementById("number_error").innerHTML="This Field Is Required";
+      document.getElementById("numbericon").style.display = "block";
+    }else if (feedback=="") {
+      document.getElementById("feedback_error").innerHTML="Your feedback is valuable. Please fill.";
+      document.getElementById("feedbackicon").style.display = "block";
+    }else if (select=="") {
+      document.getElementById("select_error").innerHTML="Select any one option";
+      document.getElementById("selecticon").style.display = "block";
+    }else if (radio=="") {
+      document.getElementById("radio_error").innerHTML="Accept T&C";
+    }
+    else{
+      function removeerror(){
+        if (name!=="" && number!=="" && feedback!=="") {
+          document.getElementById("name_error").innerHTML="";
+          document.getElementById("number_error").innerHTML="";
+          document.getElementById("feedback_error").innerHTML="";
+          document.getElementById("select_error").innerHTML="";
+          document.getElementById("radio_error").innerHTML="";
+          document.getElementById("name").value="";
+          document.getElementById("number").value="";
+          document.getElementById("feedback").value="";
+          document.getElementById("selectchoose").selectedIndex="";
+          document.getElementById("radio").checked="";
+          document.getElementById("nameicon").style.display = "none";
+          document.getElementById("numbericon").style.display = "none";
+          document.getElementById("selecticon").style.display = "none";
+          document.getElementById("feedbackicon").style.display = "none"; 
+          document.getElementById("success").innerHTML="Thanks. Your form submited successfully";
+          setTimeout(function(){$('#success').fadeOut();}, 2000);
+         
+          
+        }
+
+      }removeerror();
+    }
+
+  }
+</script>
+
+
+
+
+	   <script type="text/javascript">
+	   	 mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop >140 || document.documentElement.scrollTop >140) {
+        mybutton.style.display = "block";
+        } else {
+        mybutton.style.display = "none";
+         }
+        }
+
+       function topFunction() {
+       document.body.scrollTop = 0;
+       document.documentElement.scrollTop = 0;
+       }
+	   </script>
+
+	    <script>
+        function SIP(){
+           A = document.getElementById("amount").value;   //A=Amount
+           TP = document.getElementById("timeperiod").value;  //TP=TimePeriod
+           ROI = document.getElementById("rate").value;   //ROI=Rate Of Interest
+               if (A=="" && ROI=="" && TP=="") {
+                 document.getElementById("month_error").innerHTML="**This field is required";
+                 document.getElementById("year_error").innerHTML="**This field is required";
+                 document.getElementById("rate_error").innerHTML="**This field is required";
+                 document.getElementById("name_icon").style.display = "block";
+                 document.getElementById("number_icon").style.display = "block";
+                 document.getElementById("select_icon").style.display = "block";
+                 
+              }else if(A=="") {
+                document.getElementById("month_error").innerHTML="**This field is required";
+                document.getElementById("first").style.display = "block";
+              }
+              else if(A<100) {
+                document.getElementById("month_error").innerHTML="**You can invest Rs.100/- minimum monthly";
+                document.getElementById("first").style.display = "block";
+              }
+              else if(TP=="") {
+                document.getElementById("year_error").innerHTML="**This field is required";
+                document.getElementById("second").style.display = "block";
+              }
+              else if(TP==0) {
+                document.getElementById("year_error").innerHTML="**You can invest for minimum 1 Year";
+                document.getElementById("second").style.display = "block";
+              }
+              else if(ROI=="" ) {
+                document.getElementById("rate_error").innerHTML="**This field is required";
+                document.getElementById("third").style.display = "block";
+              }
+              else if(ROI < 10 || ROI >20 ) {
+                document.getElementById("rate_error").innerHTML="**Rate of interest vary from 10% to 20%.";
+                document.getElementById("third").style.display = "block";
+              }
+              else{
+                  document.getElementById('AM').innerHTML =(A*12)*(TP); //AM=Amount Invested              
+                  var MR=ROI/12/100;  //MR=monthlyRate
+                  var M=TP *12;       //M=Months
+                  var futureValue = 0;
+                  futureValue = (A * (Math.pow(1 + MR, M) - 1) / MR); 
+                  document.getElementById("result").value = Math.ceil(futureValue);
+                  document.getElementById('EA').innerHTML =        //EA=Expected Amount
+                                          document.getElementById("result").value; 
+
+                  document.getElementById('GA').innerHTML =          //GA= Gain Amount  
+                                           (document.getElementById("result").value )-((A*12)*(TP));   
+                       
+                       function error(){
+                        if (A!=="" || ROI!=="" || TP!=="") {
+                             document.getElementById("month_error").innerHTML="";
+                             document.getElementById("year_error").innerHTML="";
+                             document.getElementById("rate_error").innerHTML="";
+                             document.getElementById("first").style.display = "none";
+                             document.getElementById("second").style.display = "none";
+                             document.getElementById("third").style.display = "none";
+                            }
+                       }    
+                       error();             
+                   }
+              }
+    </script>
+    <script>
+// $(document).ready(function(){
+//   $("button").click(function(){
+//     $("table").fadeIn();
+//   });
+// });
+</script>
+
+
+</body>
+</html>
